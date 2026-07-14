@@ -6,6 +6,9 @@
 let runes = [];
 let nextRuneSpawnInMs = 0;
 
+const runeSprite = new Image();
+runeSprite.src = RUNE_SPRITE_SRC;
+
 // Invincibility state lives here since it's directly tied to picking up a rune
 let invincibleMsRemaining = 0;
 
@@ -89,11 +92,17 @@ function drawRuneShape(ctx, rune) {
   const centerY = rune.y + rune.height / 2;
   const radius = rune.width / 2;
 
-  // Soft outer glow
+  // Soft outer glow (kept even once the real sprite is in, for that
+  // "collectible" sparkle feel)
   ctx.fillStyle = 'rgba(255, 209, 102, 0.35)';
   ctx.beginPath();
   ctx.arc(centerX, centerY, radius * 1.6, 0, Math.PI * 2);
   ctx.fill();
+
+  if (runeSprite.complete && runeSprite.naturalWidth > 0) {
+    ctx.drawImage(runeSprite, rune.x, rune.y, rune.width, rune.height);
+    return;
+  }
 
   ctx.fillStyle = COLORS.yellow;
   ctx.strokeStyle = COLORS.navy;
