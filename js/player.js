@@ -7,10 +7,10 @@ const nagaSprite = new Image();
 nagaSprite.src = SPRITE_SHEET_SRC;
 
 const player = {
-  x: 60,
+  x: 70,
   y: GROUND_Y,
-  width: 96,
-  height: 53, // keeps the sprite sheet's 160:88 aspect ratio at a game-friendly size
+  width: 120,
+  height: 66, // keeps the sprite sheet's 160:88 aspect ratio at a game-friendly size
   velocityY: 0,
   isJumping: false,
   state: 'running', // 'running' | 'jumping' | 'hurt'
@@ -81,13 +81,11 @@ function drawPlayer(ctx) {
   const sourceX = frameIndex * SPRITE_FRAME_WIDTH;
   const destY = player.y - player.height;
 
-  // Only draw from the sprite sheet once it's actually loaded; otherwise fall
-  // back to a placeholder square so the game never shows a blank gap.
   if (nagaSprite.complete && nagaSprite.naturalWidth > 0) {
     ctx.drawImage(
       nagaSprite,
-      sourceX, 0, SPRITE_FRAME_WIDTH, SPRITE_FRAME_HEIGHT, // source rect: crop from the sheet
-      player.x, destY, player.width, player.height          // destination rect: draw on canvas
+      sourceX, 0, SPRITE_FRAME_WIDTH, SPRITE_FRAME_HEIGHT,
+      player.x, destY, player.width, player.height
     );
   } else {
     ctx.fillStyle = COLORS.yellow;
