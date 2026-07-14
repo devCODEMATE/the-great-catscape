@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Naga's Bear Run | CodeMate</title>
+  <meta name="description" content="A pixel-art endless runner starring Naga, the CodeMate mascot, with a Lone Druid-inspired power-up. Built with vanilla JS and Canvas." />
+  <link rel="stylesheet" href="css/style.css?v=1" />
+</head>
+<body>
+  <main class="game-wrapper">
+    <h1 class="game-title">Naga's Bear Run</h1>
+    <p class="game-subtitle">Press <kbd>Space</kbd> or tap to jump</p>
+
+    <canvas id="game-canvas" width="800" height="300"></canvas>
+
+    <p class="game-hint">Made by <a href="https://github.com/devCODEMATE" target="_blank" rel="noopener noreferrer">CodeMate</a></p>
+  </main>
+
+  <!-- Script load order matters: constants first, then features, then the main loop last -->
+  <script src="js/constants.js?v=1"></script>
+  <script src="js/player.js?v=1"></script>
+  <script src="js/obstacles.js?v=1"></script>
+  <script src="js/score.js?v=1"></script>
+  <script src="js/runes.js?v=1"></script>
+  <script src="js/game.js?v=1"></script>
+</body>
+</html>
