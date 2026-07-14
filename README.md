@@ -2,7 +2,7 @@
 
 A pixel-art endless runner built with **vanilla JavaScript and HTML5 Canvas** — no frameworks, no libraries, no build tools.
 
-**[▶ Play it here](https://devcodemate.github.io/naga-run/)**
+**[▶ Play it here](https://devcodemate.github.io/the-great-catscape/)**
 
 ![Made with vanilla JS](https://img.shields.io/badge/JavaScript-Vanilla-yellow)
 ![No frameworks](https://img.shields.io/badge/Frameworks-None-blue)
